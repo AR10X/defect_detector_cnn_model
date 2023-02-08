@@ -8,6 +8,7 @@
     <div id="main-card">
         {% if prediction %}
             <h1>Prediction: {{ prediction }}</h1>
+            <img src="data:image/jpeg;base64,{{ image_base64 }}" />
             <form method="get">
                 <input type="submit" value="Try another image">
             </form>
