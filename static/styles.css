@@ -1,6 +1,101 @@
 body {
-    background-color: #fff;
-    color: #fff;
+    background-color: #343541;
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: 'Courier New', Courier, monospace;
 }
+
+.topbar {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.topbar-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.topbar-btn {
+  height: 40px;
+  width: 120px;
+  color: #000;
+  background-color: #fff;
+  margin: 0 10px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+/* #label{
+  width: 50%;
+  padding: 5px auto;
+  margin: 10px auto 0 auto;
+} */
+
+#chose{
+  margin: 5px auto;
+}
+
+p {
+  font-size: 2em;
+  font-weight: bolder;
+  padding-top: 15px;
+
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#btn2{
+  margin: 10px auto;
+  padding: 5px 10px;
+}
+
+
+
+#sub-btn{
+  padding: 5px 10px;
+  width: 30%;
+  text-align: center;
+  margin: 55% auto auto auto;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1em;
+  font-weight: bolder;
+}
+
+.main-card {
+  width: 50%;
+  min-height: 80vh;
+  margin: 5vh auto;
+  text-align: center;
   
+  /* From https://css.glass */
+  /* From https://css.glass */
+  /* From https://css.glass */
+/* From https://css.glass */
+background: rgba(255, 255, 255, 0.75);
+border-radius: 5px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(7.9px);
+-webkit-backdrop-filter: blur(7.9px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+@media only screen and (max-width: 768px) {
+  .main-card{
+    width: 90vw;
+    min-height: 60vh;
+    
+  }
+  #sub-btn {
+    margin: 90% auto auto auto;
+  }
+}

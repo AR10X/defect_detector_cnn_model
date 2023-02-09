@@ -2,21 +2,38 @@
 <html>
 <head>
     <title>Defect Detection</title>
-    <!-- <link rel="stylesheet" type="text/css" href="/static/styles.css"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/static/styles.css?v={{ version }}">
 </head>
 <body>
-    <div id="main-card">
+    <div class="topbar">
+        <a href="/">
+            <button class="topbar-btn" id="home-btn">HOME</button>
+        </a>
+        <a href="/metrics">
+            <button class="topbar-btn" id="metrics-btn">METRICS</button>
+        </a>
+    </div>
+    <div class="main-card">
         {% if prediction %}
-            <h1>Prediction: {{ prediction }}</h1>
+            <p>Prediction: {{ prediction }}</p>
             <img src="data:image/jpeg;base64,{{ image_base64 }}" />
+            
             <form method="get">
-                <input type="submit" value="Try another image">
+                <input id="btn2" type="submit" value="Try another image">
             </form>
         {% else %}
-            <h1>Defect Detection</h1>
+            <p>Defect Detection</p>
             <form action="/" method="post" enctype="multipart/form-data">
-                <input type="file" name="image">
-                <button type="submit">Predict</button>
+                <div style="display: flex; flex-direction: column;">
+                    <input id="chose" type="file" name="image" required>
+                    <!-- <select name="expected" id="label" required>
+                        <option value="" disabled selected>Select Expected Result</option>
+                        <option value="defect">Defect</option>
+                        <option value="ok">OK</option>
+                    </select> -->
+                    <button id="sub-btn" type="submit">Predict</button>
+                </div>
             </form>
         {% endif %}
     </div>
