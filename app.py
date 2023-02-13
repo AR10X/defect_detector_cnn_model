@@ -1,18 +1,10 @@
 from flask import Flask, request, render_template, send_from_directory
 from keras.models import load_model
 import numpy as np
-import tensorflow as tf
 import io
 from PIL import Image
 import base64
 import time
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-from sklearn.metrics import classification_report, confusion_matrix
-
-
-import os
 
 
 def create_app():
@@ -68,4 +60,4 @@ def create_app():
 
 if __name__ == '__main__':
     app = create_app()
-    app.run(debug=True)
+    app.run()
