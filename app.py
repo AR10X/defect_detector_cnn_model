@@ -30,16 +30,16 @@ def create_app():
         if request.method == "POST":
 
             ImageFile = request.files.get('image').read()
-            image_base64 = base64.b64encode(ImageFile).decode("utf-8")
+            
 
             image = Image.open(io.BytesIO(ImageFile))
             image = image.resize((300, 300))
 
 
-            image = image.convert('L')
+            image_grey = image.convert('L')
+            image_base64 = base64.b64encode(image_grey).decode("utf-8")
 
-
-            image = np.array(image)
+            image = np.array(image_grey)
 
 
             image = np.expand_dims(image, axis=0)
@@ -60,4 +60,4 @@ def create_app():
 
 if __name__ == '__main__':
     app = create_app()
-    app.run()
+    app.run(host='0.0.0.0', port=5000)
